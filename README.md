@@ -22,27 +22,21 @@ profile, so long as the robot controller sends the trajectory points faster than
 consumes them. 
 
 ### Definitions
-	- Control Mode: allow a “Robot Controller” to specify/select a target value to meet
-	- Motion Profile Buffer (MPB)
-The firmware buffer in the Talon SRX. The MPB can hold up to 128 trajectory points at once
-(with the current firmware, see Section 9.2 for requirements).
-	- Motion Profile Executer (MPE)
-The Motion Profile Executer is the firmware that calculates the motor-output based on the active
+- Control Mode: allow a “Robot Controller” to specify/select a target value to meet
+- Motion Profile Buffer (MPB): holds up to 128 trajectory points
+- Motion Profile Executer (MPE): the firmware that calculates the motor-output based on the active
 trajectory point. It updates the motor update every 1ms by summing the velocity feed-forward
 term with the output of a position servo. The MPE holds one trajectory point at a time. Should
 the Talon Motion Control features be activated when there is no trajectory point buffered into the
 MPE, the motor output will be neutral.
-	- Trajectory Point
-This term refers to the trajectory point that is being sent to the Talon SRX buffering. This is not
-the point that is currently be used for calculating the throttle output.
-	- The Last Trajectory Point
-When generating the trajectory points, the final trajectory point in the profile is referred to as the
-“Last Trajectory Point”. This point typically will have the following properties…
-- The velocity to feed-forward is set to zero.
-- The “Is Last” flag is set to “true”.
+- Trajectory Point: the trajectory point that is being sent to the Talon SRX buffering. This is not
+the point that is currently being used for calculating the throttle output.
+- The Last Trajectory Point: When generating the trajectory points, the final trajectory point in the profile is referred to as the “Last Trajectory Point”. This point typically will have the following properties…
+	- The velocity to feed-forward is set to zero.
+	- The “Is Last” flag is set to “true”.
 This ensures that when the MPE processes the last point, it will hold position indefinitely (or until
 the robot controller decides the next course of action).
-	- Trajectory Point Duration (Milliseconds)
+- Trajectory Point Duration (Milliseconds)
 The time to servo this trajectory point in milliseconds. The minimum value is 1ms and the
 maximum is 255ms. If ‘0’ is sent, it will be interpreted as 1ms.
 Talon SRX Motion Profile Reference Manual 1/19/2016
