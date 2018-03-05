@@ -1,4 +1,4 @@
-[User Guide](#TalonSRX-User's-Guide)
+[User Guide](#talonsrx-users-guide)
 
 # TalonSRX-User's Guide
 
