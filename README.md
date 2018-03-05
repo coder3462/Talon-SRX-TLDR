@@ -1,4 +1,21 @@
-[User Guide](#talonsrx-users-guide)
+[Motion Profiling Manual TLDR](#talonsrx-motion-profiling-manual)
+
+[User Guide TLDR](#talonsrx-users-guide)
+
+# TalonSRX-Motion Profiling Manual
+[Motion Profiling Manual](https://www.ctr-electronics.com/downloads/pdf/Talon%20SRX%20Motion%20Profile%20Reference%20Manual.pdf)
+
+TL;DR
+
+- Control Modes
+	- Percent Voltage
+	- Voltage Compensation
+	- Position Closed-Loop
+	- Velocity (Speed) Closed-Loop
+	- Current (Draw) Closed-Loop
+
+### Definitions
+	- Control Mode: allow a “Robot Controller” to specify/select a target value to meet
 
 # TalonSRX-User's Guide
 
@@ -31,7 +48,7 @@ TL;DR
 
 ### Definitions:
 - Back-EMF: Back Electromotive First
-- CAN stands for Controller Area Network
+- CAN: Controller Area Network
 - Limit switches: a switch for a circuit
 - PDP: power distribution panel
 - Quadrature encoders: An encoder which indicates both position and direction of rotation
